@@ -1,0 +1,29 @@
+type Project @model 
+@auth(rules: [
+  { allow: public, operations: [read] },
+  { allow: groups, groups: ["Admin"], operations: [create, update, delete, read] }
+]) {
+  id: ID!
+  title: String!
+  postedDate: AWSDateTime!
+  updatedDate: AWSDateTime!
+  tags: [String]
+  description: String!
+  reactions: [Int]
+  threads: [Thread] @hasMany
+}
+
+type Thread @model
+@auth(rules: [
+  { allow: public, operations: [read] },
+  { allow: groups, groups: ["Admin"], operations: [create, update, delete, read] }
+]) {
+  id: ID!
+  headline: String!
+  postedDate: AWSDateTime!
+  updatedDate: AWSDateTime!
+  tags: [String]
+  content: String!
+  projectID: ID! @index(name: "byProject")
+  project: Project @belongsTo(fields: ["projectID"])
+}
