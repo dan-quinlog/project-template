@@ -6,11 +6,14 @@ export const onCreateProject = /* GraphQL */ `
     onCreateProject(filter: $filter) {
       id
       title
-      postedDate
-      updatedDate
       tags
       description
-      reactions
+      react01
+      react02
+      react03
+      react04
+      react05
+      react06
       threads {
         nextToken
         __typename
@@ -26,11 +29,14 @@ export const onUpdateProject = /* GraphQL */ `
     onUpdateProject(filter: $filter) {
       id
       title
-      postedDate
-      updatedDate
       tags
       description
-      reactions
+      react01
+      react02
+      react03
+      react04
+      react05
+      react06
       threads {
         nextToken
         __typename
@@ -46,11 +52,14 @@ export const onDeleteProject = /* GraphQL */ `
     onDeleteProject(filter: $filter) {
       id
       title
-      postedDate
-      updatedDate
       tags
       description
-      reactions
+      react01
+      react02
+      react03
+      react04
+      react05
+      react06
       threads {
         nextToken
         __typename
@@ -66,26 +75,32 @@ export const onCreateThread = /* GraphQL */ `
     onCreateThread(filter: $filter) {
       id
       headline
-      postedDate
-      updatedDate
       tags
       content
+      react01
+      react02
+      react03
+      react04
+      react05
+      react06
       projectID
       project {
         id
         title
-        postedDate
-        updatedDate
         tags
         description
-        reactions
+        react01
+        react02
+        react03
+        react04
+        react05
+        react06
         createdAt
         updatedAt
         __typename
       }
       createdAt
       updatedAt
-      projectThreadsId
       __typename
     }
   }
@@ -95,26 +110,32 @@ export const onUpdateThread = /* GraphQL */ `
     onUpdateThread(filter: $filter) {
       id
       headline
-      postedDate
-      updatedDate
       tags
       content
+      react01
+      react02
+      react03
+      react04
+      react05
+      react06
       projectID
       project {
         id
         title
-        postedDate
-        updatedDate
         tags
         description
-        reactions
+        react01
+        react02
+        react03
+        react04
+        react05
+        react06
         createdAt
         updatedAt
         __typename
       }
       createdAt
       updatedAt
-      projectThreadsId
       __typename
     }
   }
@@ -124,26 +145,32 @@ export const onDeleteThread = /* GraphQL */ `
     onDeleteThread(filter: $filter) {
       id
       headline
-      postedDate
-      updatedDate
       tags
       content
+      react01
+      react02
+      react03
+      react04
+      react05
+      react06
       projectID
       project {
         id
         title
-        postedDate
-        updatedDate
         tags
         description
-        reactions
+        react01
+        react02
+        react03
+        react04
+        react05
+        react06
         createdAt
         updatedAt
         __typename
       }
       createdAt
       updatedAt
-      projectThreadsId
       __typename
     }
   }

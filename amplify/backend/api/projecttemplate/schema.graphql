@@ -1,29 +1,36 @@
 type Project @model 
 @auth(rules: [
   { allow: public, operations: [read] },
-  { allow: groups, groups: ["Admin"], operations: [create, update, delete, read] }
+  { allow: groups, groups: ["ADMIN"], operations: [create, update, delete, read] }
 ]) {
   id: ID!
   title: String!
-  postedDate: AWSDateTime!
-  updatedDate: AWSDateTime!
   tags: [String]
   description: String!
-  reactions: [Int]
-  threads: [Thread] @hasMany
+  react01: Int @default(value: "0")
+  react02: Int @default(value: "0")
+  react03: Int @default(value: "0")
+  react04: Int @default(value: "0")
+  react05: Int @default(value: "0")
+  react06: Int @default(value: "0")
+  threads: [Thread] @hasMany(indexName: "byProject", fields: ["id"])
 }
 
 type Thread @model
 @auth(rules: [
   { allow: public, operations: [read] },
-  { allow: groups, groups: ["Admin"], operations: [create, update, delete, read] }
+  { allow: groups, groups: ["ADMIN"], operations: [create, update, delete, read] }
 ]) {
   id: ID!
   headline: String!
-  postedDate: AWSDateTime!
-  updatedDate: AWSDateTime!
   tags: [String]
   content: String!
+  react01: Int @default(value: "0")
+  react02: Int @default(value: "0")
+  react03: Int @default(value: "0")
+  react04: Int @default(value: "0")
+  react05: Int @default(value: "0")
+  react06: Int @default(value: "0")
   projectID: ID! @index(name: "byProject")
   project: Project @belongsTo(fields: ["projectID"])
 }

@@ -6,11 +6,14 @@ export const getProject = /* GraphQL */ `
     getProject(id: $id) {
       id
       title
-      postedDate
-      updatedDate
       tags
       description
-      reactions
+      react01
+      react02
+      react03
+      react04
+      react05
+      react06
       threads {
         nextToken
         __typename
@@ -31,11 +34,14 @@ export const listProjects = /* GraphQL */ `
       items {
         id
         title
-        postedDate
-        updatedDate
         tags
         description
-        reactions
+        react01
+        react02
+        react03
+        react04
+        react05
+        react06
         createdAt
         updatedAt
         __typename
@@ -50,26 +56,32 @@ export const getThread = /* GraphQL */ `
     getThread(id: $id) {
       id
       headline
-      postedDate
-      updatedDate
       tags
       content
+      react01
+      react02
+      react03
+      react04
+      react05
+      react06
       projectID
       project {
         id
         title
-        postedDate
-        updatedDate
         tags
         description
-        reactions
+        react01
+        react02
+        react03
+        react04
+        react05
+        react06
         createdAt
         updatedAt
         __typename
       }
       createdAt
       updatedAt
-      projectThreadsId
       __typename
     }
   }
@@ -84,14 +96,17 @@ export const listThreads = /* GraphQL */ `
       items {
         id
         headline
-        postedDate
-        updatedDate
         tags
         content
+        react01
+        react02
+        react03
+        react04
+        react05
+        react06
         projectID
         createdAt
         updatedAt
-        projectThreadsId
         __typename
       }
       nextToken
@@ -117,14 +132,17 @@ export const threadsByProjectID = /* GraphQL */ `
       items {
         id
         headline
-        postedDate
-        updatedDate
         tags
         content
+        react01
+        react02
+        react03
+        react04
+        react05
+        react06
         projectID
         createdAt
         updatedAt
-        projectThreadsId
         __typename
       }
       nextToken
